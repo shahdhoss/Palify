@@ -1,1 +1,1 @@
-This a mock facebook, my first indie project. Its still under development phase.
+This a mock facebook, my first indie project. It's still in development phase.
