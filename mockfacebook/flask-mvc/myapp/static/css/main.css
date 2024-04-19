@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+  }
+.banner {
+    position: relative;
+    width: 100%; /* Adjust the width according to your preference */
+    height: 45vh;
+    margin: 0 auto; /* Center the banner horizontally */
+    background-color: #f0f0f0; /* Add background color if needed */
+    
+    border: 2px solid #ccc; /* Add border if desired */
+    box-sizing: border-box; 
+    border-radius: 10px;
+}
+.circle-banner {
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100px; /* Adjust the width according to your preference */
+    height: 100px;
+    background-color: #f0f0f0; /* Add background color if needed */
+    padding: 10px; /* Adjust the padding if needed */
+    border-radius: 50%; /* Set border-radius to 50% for a circular shape */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    color: #fff; /* Set text color */
+    border: 2px solid #ccc;
+    margin-top: -50px;
+}
+.image-placeholder {
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0; 
+    padding: 10px; 
+    border-radius: 50%; 
+    box-sizing: border-box; 
+    border: 2px solid #ccc;
+    overflow: hidden; 
+    margin-top: -50px;
+}
+.rectangle-placeholder {
+    margin: 0 auto;
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    height: 100vh; /* Adjust the height as needed */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 15px; /* Adjust the border-radius to control the curvature */
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    margin-top: -50px;
+  }
+  
+.image-placeholder img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 2px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.small-image-placeholder {
+    margin: 0 auto;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    margin-top: -15px;
+}
+.medium-image-placeholder {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    position: relative; /* Use relative positioning to contain the img */
+}
+
+.medium-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+.button-image-placeholder {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    vertical-align: middle; /* Ensure vertical alignment */
+    border: none;
+    outline: none;
+  }
+
+  /* Style for the image inside the button */
+  .button-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+.small-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.large-image-placeholder {
+    margin: 0 auto;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    margin-top: -15px;
+}
+.hidden {
+    display: none;
+  }
+.card{
+    padding: 1.5em .5em .5em;
+    border-radius: 20px;
+    box-shadow: 0 15px 15px rgba(0,0,0,.2);
+    width: auto;
+    height: auto;
+}
+.large-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position dropdown content below the button */
+    right: 40%;
+    width: 200px; /* Adjust the width as needed */
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  }
+  
+  /* Style for each dropdown item */
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover for dropdown items */
+  .dropdown-content a:hover {
+    background-color: #074A78;
+    color: #fff;
+    border-radius: 15px;
+  }
+  
+  /* Show the dropdown content when the button is hovered */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+.your-image-class {
+    position: relative;
+    width: 18px; 
+    height: 17px; 
+    border-radius: 50%; /* Add border-radius for a circular shape */
+    display: block;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the element horizontally */
+    margin-top: -20px;
+}
+
+.logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+body{
+      background-color: #F5F8FA;
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #181717;
+      text-align: left;
+      font-size: large;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .wrap {
+    width: 100%;
+}
+.left-align {
+    align-self:;
+}
+.floatleft {
+    float:left; 
+    width: 38%;
+    background-color: #eee;
+    height: 100%;
+    border-radius: 2 px;
+}
+
+.floatright {
+float: right;
+    background-color: #eee;
+    height: 100%;
+    width: 55%;
+    border-radius: 2 px;
+}
+.grey-small-button{
+    padding: 8px 20px; /* Adjust the padding to make the button longer or shorter */
+    background-color: gray; /* Sky blue color */
+    color: #fff; /* Text color */
+    font-size: 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20%;
+}
+.grey-small-button:hover {
+    background-color: darkgrey; /* Darker shade of sky blue on hover */
+}
+.blue-small-button {
+    padding: 2px 21px; /* Adjust the padding to make the button smaller */
+    background-color: #074A78; /* Sky blue color */
+    color: #fff; /* Text color */
+    font-size: 13px; /* Adjust the font size to make the text smaller */
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80px;
+    height: 40px
+  }
+.blue-small-button:hover {
+    background-color: #5F9EA0; /* Darker shade of sky blue on hover */
+}
+  
+.sky-blue-button {
+    padding: 10px 60px; /* Adjust the padding to make the button longer or shorter */
+    background-color: #074A78; /* Sky blue color */
+    color: #fff; /* Text color */
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+/* Hover effect */
+.sky-blue-button:hover {
+    background-color: #5F9EA0; /* Darker shade of sky blue on hover */
+}
+.banner-title{
+    transform: translateY(150px)
+}
+.banner-end{
+    transform: translateY(280px)
+}
+.thumnail{
+    width: 257px;
+    height: 257px;
+}
+
+.hover-media:hover{
+    background-color: #F5F8FA;
+}
+/*--------------------------Grid template starts design for image gallery-----------------*/
+
+
+.grid-template{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-rows: minmax(250px,auto);
+    grid-gap: 10px;
+}
+
+.item-1{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+
+}
+.item-7{
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    
+
+}
+
+.item-9{
+    grid-row: 3 / 5;
+    
+
+}
+
+
+.item-10{
+    grid-row: 3 / 5;
+    
+
+}
+
+.item-11{
+  grid-column: 3/5;
+  grid-row: 3 / 5;
+    
+}
+.item-12{
+    grid-row: 3 / 5;
+    
+
+}
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; 100% of the viewport height */
+}
+.centered-content {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+.curved-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff; /* Text color */
+    background-color: skyblue; /* Blue background color */
+    border: none;
+    border-radius: 20px; /* Adjust border-radius for curved corners */
+    transition: background-color 0.3s ease;
+}
+/* Hover effect */
+.curved-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+/*----------------------------------(This code Important for Modal sizing on large device)-----------------------------------*/
+.modal-dialog {
+    position: relative;
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
