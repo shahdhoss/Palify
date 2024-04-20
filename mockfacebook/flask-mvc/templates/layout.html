@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <style>
+        #navbar {
+            background-color: #13364b;
+            padding: 8px 16px;
+            height: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        .scrolled {
+            top: -60px;
+        }
+    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<!------------------LIght BOx for Gallery-------------->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.min.css') }}">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">   
+</script>   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">   
+</script>   
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+    rel="stylesheet" type="text/css" /> 
+<!------------------LIght BOx for Gallery-------------->
+<title>Palify</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/3.png') }}">
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#074A78; padding: 8px 16px; height: 60px;">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand"><img src="{{ url_for('static', filename='img/palify.png') }}" alt="logo" class="margin-top" width="65px" height="65px"></a>
+        {% if current_user.is_authenticated %}
+        <input id="searchbar" style="border-radius: 20px; height: 40px; width: 230px; font-size: 15px; border: none; outline: none" placeholder="🔎Search">
+        {% endif %}
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#responsive"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse mx-auto" id="responsive">
+            <ul class="navbar-nav mr-auto mx-auto text-capitalize">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item"><a href="{{ url_for('main.index') }}" class="nav-link" style="margin-right: 280px;">Home</a></li> 
+                {% endif %}
+            </ul>
+        
+            <!-- Align these links to the right -->
+            <ul class="navbar-nav text-capitalize ml-auto">
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="button-image-placeholder">
+                                <div class="medium-image-placeholder">
+                                    <img src="https://t4.ftcdn.net/jpg/05/42/36/11/360_F_542361185_VFRJWpR2FH5OiAEVveWO7oZnfSccZfD3.jpg" alt="Profile Image">
+                                </div>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" style="font-size: 16px;">Settings and Privacy</a>
+                                <a href="{{url_for('main.profile', user_id = current_user.id)}}" style="font-size: 16px;" >My Profile</a>
+                                <a href="{{url_for('main.logout', user_id = current_user.id) }}" style="font-size: 16px;"> Log out</a>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+<script> 
+    $( function() { 
+      var availableTags = [ 
+          {% for person in users %} 
+              "{{ person }}", 
+          {% endfor %} 
+      ]; 
+      $( "#searchbar" ).autocomplete({ 
+        source: availableTags,
+        multiple: true,
+        multipleSeparator: " ",
+      }); 
+    }); 
+
+</script> 
+</body>
+</html>
